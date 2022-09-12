@@ -6,7 +6,6 @@ import User from './models/User.js';
 mongoose.connect("mongodb+srv://testKal:testKal@cluster0.veozyk4.mongodb.net/?retryWrites=true&w=majority");
 
 
-
 const app= express();
 app.use(express.static("templates"));
 app.use(express.json());
