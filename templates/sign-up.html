@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Új profil létrehozása-eCaly</title>
+    <link rel="stylesheet" href="css/sing-up.css">
+    <link rel="icon" type="favicon-48" href="img/logo.png">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img id="header-background" src="img/rectangle.png" alt="rectangle">
+            <img src="img/logo-full.png" alt="logo">
+            <h1>Új profil létrehozása</h1>
+            <a href="index.html" id="login">Bejelentkezés</a>
+        </header>
+        <div class="section">
+
+            <h2>Profil adatok</h2>
+            <div class="form-group">
+                <div class="main">
+                    <form  method="post">
+                        <label for="fname">Családi és utónév</label>
+                        <input type="text" id="fname" name="fname" placeholder="Add meg a teljes neved!" required>
+                        <span class="error fname-error">Név mező kitöltése kötelező!</span>
+                        <label for="email">Add meg az email címed!</label>
+                        <input type="email" name="email" id="email" placeholder="Add meg az email címed!" required>
+                        <span class="error email-error">Email mező kitöltése kötelező!</span>
+                        <label for="coname">Cégnév</label>
+                        <p class="light-column">Ez a név fog megjelenni a foglaláskor az ügyfeleknek!</p>
+                        <input type="text" id="coname" name="coname" placeholder="Add meg a céged nevét!">
+                        <span class="error coname-error"> Cégnév mező kitöltése kötelező!</span>
+                        <label for="pwd">Jelszó</label>
+                        <input type="password" name="pwd" id="pwd" minlength="6" maxlength="12"
+                            placeholder="Add meg a jelszavad!" required>
+                        <span class="error pwd-error">Jelszó mező kitöltése kötelező!</span>    
+                        <p class="light-column">A jelszónak minimum 6 és maximum 12 karakterből kell álljon</p>
+                        <p class="light-column">A
+                            jelszónak tartalmaznia kell egy nagybetűt és számot is</p>
+                        <label for="pwdagain">Jelszó újra</label>
+                        <input type="password" name="pwdagain" id="pwdagain" minlength="6" maxlength="12"
+                            placeholder="Add meg a jelszavad újra!" required>
+                        <span class="error pwdagain-error">Jelszó újra mező kitöltése kötelező!</span> 
+                        <span class="error wrong-pwd">A jelszónak egyeznie kell! </span>   
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="packet">
+                <h2>Kiválasztott csomag</h2>
+                <p class="price">2 500 Ft/hó</p>
+            </div>
+            <div id="ekalendarsolo">
+                <h3>eKalendár Solo</h3>
+                <p class="green-item" id="icon"><img id="icons" src="img/ellipse.png" alt="logo"> 3 hét ingyenes
+                    próbaidőszak kötelezettség nélkül!</p>
+                <p class="other" id="icon"><img id="icons" src="img/calendar-icon-2.png" alt="logo"> 1 naptár</p>
+
+                <p class="other" id="icon"><img id="icons" src="img/service-icon.png" alt="logo"> Bármennyi szolgáltatás
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="footer">
+                <label for="checkbox" id="checkboxlabel"></labelor>
+                    <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" required>
+                    Fogadd el a izé dokumentumot</label>
+                    <span class="error checkbox-error">Nem fogadtad el a nyilatkozatot!</span>    
+
+            </div> <p style="text-align: center;" ><span id="submit">Profil létrehozása</span></p>
+            </form>
+        </div>
+    </div>
+
+    </div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script src="js/main.js">
+  </script>
+
+</html>

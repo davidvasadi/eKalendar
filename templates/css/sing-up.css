@@ -1,0 +1,217 @@
+*{
+    font-family: 'Open Sans', sans-serif; 
+    padding: 0;
+    margin: 0;
+}
+.container{
+    padding: 10px;
+}
+/**********HEADER**********/
+#header-background{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(90.54deg, #5DD8F3 15.73%, #5CA5E9 88.41%);
+    height: 600px;
+    transform: rotate(-2deg) scaleX(1.10);
+
+}
+::placeholder{
+    color: #898989;
+}
+header{
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#login{
+color:#ffffff;
+background-color: #14334F;
+border: 2px solid transparent;
+border-radius: 22px;
+font-size: 14px;
+text-decoration: none;
+padding: 10px;
+}
+
+h1{
+    text-align: center;
+    color: #FFFFFF;
+}
+/**********HEADER END**********/
+/**********SECTION**********/
+.section{
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 13px;
+    width: 100%;
+    max-width: 500px;
+    margin: 70px auto 20px auto;
+}
+h2{
+    font-size: 15px;
+}
+
+h2::after{
+    content: "";
+    display: block;
+    width: 56px;
+    height: 7px;
+    overflow: hidden;
+    background-color: #4B86BD; 
+    border-radius: 2px;
+    margin: 10px 0;
+}
+form{
+    display: flex;
+    flex-direction: column; 
+    align-content: center;
+    align-items: stretch;
+}
+label{
+    font-size: 14px;
+    font-weight: bold;
+   margin:  10px 0;
+}
+input{
+    background-color: #F8F8F8;
+    padding: 10px;
+    font-size: 12px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    
+}
+input:hover{
+    border: 2px solid #0072dde5;
+}
+p, #color-item{
+    display: flex;
+    padding: 0;
+    margin: 5px 0;
+    font-size: 10px;
+    color: #898989;
+    align-items: center;
+
+}
+p.light-column::before{
+    display: inline-block;
+    content: "";
+    width: 5px;
+    height: 20px;
+    overflow: hidden;
+    background-color: #B4D8F9; 
+    border-radius: 2px;
+    margin: 10px;
+}
+#color-item{
+    margin-right: 5px;
+}
+#ekalendarsolo{
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 13px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.green-item{
+    color: #6FC561;
+}
+.price{
+    color:#4B86BD;
+    font-weight: bold;
+}
+.packet{display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+/**********SECTION END**********/
+/**********FOOTER**************/
+.footer{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    align-content: center;
+}
+#checkbox{
+    padding: 0;
+    margin: 0;
+}
+#checkboxlabel{
+    margin: 5px 0;
+    font-weight: normal;
+    color: #898989;
+}
+#submit{ 
+    background-color: #4B86BD;
+    border: 2px solid transparent;
+    border-radius: 42px;
+    color: #FFFFFF;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 12px;
+    cursor: pointer;
+}
+#submit:hover, #login:hover{
+    border: 2px solid #FFFFFF;
+}
+#icon{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    flex-wrap: nowrap;
+    margin: 0 5px 0 0;
+}
+#icons{
+    margin-right: 5px;
+}
+a{
+    text-decoration: none;
+}
+
+/**********FOOTER END**************/
+/**********JS**************/
+.error{
+    display: none;
+    visibility: hidden;
+    color: red;
+    margin: 10px;
+    font-size: 12px;
+}
+/**********JS END**************/
+/**********MEDIA SCREEN***********/
+@media only screen and (max-width: 620px) {
+
+   header{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       margin-bottom: 10px;
+   }
+   a#login{
+       display: none;
+   }
+   h1{
+       margin: 10px;
+       font-size: 20px;
+   }
+   .section{
+       margin: 40px auto 20px auto;
+   } 
+}
+
+/**********MEDIA SCREEN END***********/

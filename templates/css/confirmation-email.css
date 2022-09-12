@@ -1,0 +1,59 @@
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0%;
+}
+#header-background{
+    width: 100%;
+    position: absolute;
+    height: 200px;
+    z-index: -1;
+    background: linear-gradient(90.54deg, #5DD8F3 15.73%, #5CA5E9 88.41%);  
+}
+a{
+    text-decoration: none;
+}
+
+#login{
+    color: #14334F;
+    border: 2px solid #14334F;
+    border-radius: 22px;
+    padding: 10px 15px;
+    margin: 8px;
+    text-decoration: none;
+}
+#login:hover{
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+}
+h1{
+    color: #FFFFFF;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+}
+main{
+    margin-top: 40px;
+    padding: 40px;
+}
+#main-span{
+    color: #242424;
+}
+@media only screen and (max-width: 620px){
+    header{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

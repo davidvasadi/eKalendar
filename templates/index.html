@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bejelentkezés-eCaly</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" type="favicon-48" href="img/logo.png">
+</head>
+
+<body>
+  <div class="container">
+    <img id="calendar" src="img/calendar-icon-1.png" alt="calendar-icon">
+    <nav>
+      <div class="left">
+        <img src="img/logo-full.png" alt="logo">
+      </div>
+      <div class="right">
+        <a id="right-signup" href="sign-up.html">Regisztrálok</a>
+        <a id="right-login" href="index.html">Bejelentkezés</a>
+      </div>
+    </nav>
+    <section>
+      <h2>Bejelentkezés</h2>
+      <form  method="POST">
+        <span class="error login-error">Az email cím vagy a jelszó hibás!</span>
+        <label for="email">Email cím</label>
+        <input type="email" id="email" name="email" placeholder="ko.bela@gmail.com" required>
+        <span class="error email-error">Email megadása kötelező!</span>
+        <label for="pwd">Jelszó</label>
+        <input type="password" id="pwd" name="pwd" placeholder="********" required>
+        <span class="error pwd-error">Jelszó megadása kötelező!</span>
+        <p class="question-content">Elhagytad a jelszavad?</p>
+        <div id="position">
+        <span id="button" > <img class="arrow" src="img/arrow.png" alt="arrow" > Bejelentkezés</span>
+          <div class="small-content">
+            <p>Nincs még fiókod?</p>
+            <a class="signup-bottom" href="sign-up.html">Itt tudsz regisztrálni</a>
+          </div>
+        </div></form>
+     
+    </section>
+  </div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script src="js/main.js">
+  </script>
+
+</html>

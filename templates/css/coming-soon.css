@@ -1,0 +1,20 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+    .container{
+        width: 100%;
+        position: absolute;
+        background: linear-gradient(90.54deg, #5DD8F3 15.73%, #5CA5E9 88.41%);
+        z-index: -1;
+        overflow: hidden;
+        box-sizing: border-box;
+        height: 100%;
+    }
+  h2{
+      text-align: center;
+      color: white;
+      margin-top: 250px;
+      
+  }  
