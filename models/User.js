@@ -2,8 +2,6 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-
-
 const userSchema = new Schema({
     name: String,
     email: String,
@@ -12,4 +10,4 @@ const userSchema = new Schema({
     package: String
 });
 
-module.exports = mongoose.model('users', userSchema);
+mongoose.model('users', userSchema);

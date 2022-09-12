@@ -1,26 +1,21 @@
 import express from "express";
 import mongoose from "mongoose";
-import { Schema } from "mongoose";
-import User from './models/User.js';
 
-mongoose.connect("mongodb+srv://testKal:testKal@cluster0.veozyk4.mongodb.net/?retryWrites=true&w=majority");
-
-
+//ez kell neked: mongoose.connect("mongodb+srv://testKal:testKal@cluster0.veozyk4.mongodb.net/?retryWrites=true&w=majority");
+// ez csak teszt:
+mongoose.connect('mongodb+srv://tut_db_user:M-login576@tutorialcluster.bgnihru.mongodb.net/?retryWrites=true&w=majority');
 
 const app= express();
 app.use(express.static("templates"));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send({
-        "heloka":"nyalóka"
-    });
-    const user = new User({
-        name:"teszt Elek",
-        email:"tesztelek@gmail",
-        password: "kukimuki",
-        package: "8"
-    }).save();
+    res.send('Itt lesz majd a login');
+})
+
+//reg útvonal
+app.get('/api/registration', (req,res) => {
+    res.send('Reg kezelés');
 })
 
 
