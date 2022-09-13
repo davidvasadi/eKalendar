@@ -10,15 +10,20 @@ regBtn.addEventListener('click', () => {
     let coname = document.querySelector("#coname").value;
     let pwd = document.querySelector("#pwd").value;
 
-    let formData = {fname : fname, email:email, coname:coname, pwd:pwd };
+    let formData = {
+        fname: fname,
+        email:email,
+        coname:coname,
+        pwd:pwd
+    };
     
     fetch('http://localhost:8000/api/registration', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
-            'Content-Type': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json', // ez kell mivel json küldünk, így ismeri fel csak a backend
         }
     })
-    .then(res => console.log(res.json())) //TODO: még mindig nem jön vissza rendesen a response adat. 
+    .then(res => res.json()) //először elkapjuk a responset és csinálunk belőle jsont
+    .then(body => console.log(body)); //majd kinyerjük belőle a msg-et
 })

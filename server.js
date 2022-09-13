@@ -1,7 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from 'cors';
-import "./models/User.js";
+import bodyParser from 'body-parser'; // ez kell a req.body kezeléséhez
+import "./models/Account.js";
 
 //ez kell neked: mongoose.connect("mongodb+srv://testKal:testKal@cluster0.veozyk4.mongodb.net/?retryWrites=true&w=majority");
 // ez csak teszt:
@@ -14,33 +15,37 @@ app.use(express.static("templates"));
 app.use(express.urlencoded({extended:false})); //->middlerware hogy normálisan átmenjenek az adatok
 app.use(express.json());//->middlerware hogy normálisan átmenjenek az adatok
 
+const jsonParser = bodyParser.json(); // ez a json middleware a req.body-hoz
+
 
 app.get('/', (req, res) => {
     res.send('Itt lesz majd a login');
 })
 
-const User = mongoose.model('accounts');
+const Account = mongoose.model('accounts');
 
 //reg útvonal
-app.post('/api/registration', (req,res) => {
+app.post('/api/registration', jsonParser, (req,res) => {
+    
     console.log(req.body);
 
+
     // itt rakjuk be az infokat a db-be és csinálunk új usert.
-    User.findOne({email: req.body.email}) //elöször megnézzük hogy az email címéval van e már account
-    .then(existingUser => {
-        if(existingUser) {
-            console.log(existingUser);
+    Account.findOne({email: req.body.email}) //elöször megnézzük hogy az email címéval van e már account
+    .then(existingAcc => {
+        if(existingAcc) {
+            res.json({msg: 'Email már regisztrálva'}); //vissza küldünk egy üzit, hogy tudjuk mi van.
         } else {
-            new User({     
+            new Account({     
                 name: req.body.fname,
                 email: req.body.email,
                 company: req.body.coname,
                 password: req.body.pwd  // ezt még ildomos hash-elni kérem szépen! :)
             })
             .save()  //ha nincs, létrehozzuk db-ben egy új user rekordot a Schema alapján
-            .then(user => console.log(user));
+            .then(account => res.json({msg : 'Fiók regisztrálva: ' + account.email})); // itt is üzi ha sikeres a reg
         }
-    })
+    }) 
 })
 
 
