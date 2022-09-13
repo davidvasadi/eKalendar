@@ -1,6 +1,6 @@
 
 ///////////REGISZTRÁCIÓ/////////
-$("#submit").click(
+/*$("#submit").click(
     () => {
 
         let fname = $("#fname").val();
@@ -172,5 +172,5 @@ function loginUser(email, pwd){
         window.location.replace("https://davidvasadi.github.io/eCaly/homepage.html")
     }
     
-}
+}*/
 

@@ -2,14 +2,11 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-
-
-const userSchema = new Schema({
+const accSchema = new Schema({
     name: String,
     email: String,
     company: String,
-    password: String,
-    package: String
+    password: String
 });
 
-module.exports = mongoose.model('users', userSchema);
+mongoose.model('accounts', accSchema);
