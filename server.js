@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from 'cors';
+import "./models/User.js";
 
 //ez kell neked: mongoose.connect("mongodb+srv://testKal:testKal@cluster0.veozyk4.mongodb.net/?retryWrites=true&w=majority");
 // ez csak teszt:
@@ -18,15 +19,28 @@ app.get('/', (req, res) => {
     res.send('Itt lesz majd a login');
 })
 
+const User = mongoose.model('accounts');
+
 //reg útvonal
 app.post('/api/registration', (req,res) => {
     console.log(req.body);
-    res.json({
-        fname: req.body.fname,
-        email: req.body.email,
-        coname: req.body.coname,
-        pwd: req.body.pwd
-    });
+
+    // itt rakjuk be az infokat a db-be és csinálunk új usert.
+    User.findOne({email: req.body.email}) //elöször megnézzük hogy az email címéval van e már account
+    .then(existingUser => {
+        if(existingUser) {
+            console.log(existingUser);
+        } else {
+            new User({     
+                name: req.body.fname,
+                email: req.body.email,
+                company: req.body.coname,
+                password: req.body.pwd  // ezt még ildomos hash-elni kérem szépen! :)
+            })
+            .save()  //ha nincs, létrehozzuk db-ben egy új user rekordot a Schema alapján
+            .then(user => console.log(user));
+        }
+    })
 })
 
 
